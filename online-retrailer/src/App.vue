@@ -29,5 +29,6 @@ export default {
 }
 .container {
   flex: 1 0 auto;
+  display: flex;
 }
 </style>

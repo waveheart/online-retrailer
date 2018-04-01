@@ -4,12 +4,20 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// import index.scss
+import 'common/style/index.css'
+
 // import element
-import 'element-ui/lib/theme-chalk/index.css'
-import { Button, Select } from 'element-ui'
+import { Button, Tabs, TabPane, InputNumber, Input, Form, FormItem } from 'element-ui'
+import './element-variables.scss'
 
 Vue.component(Button.name, Button)
-Vue.component(Select.name, Select)
+Vue.component(Tabs.name, Tabs)
+Vue.component(TabPane.name, TabPane)
+Vue.component(InputNumber.name, InputNumber)
+Vue.component(Input.name, Input)
+Vue.component(Form.name, Form)
+Vue.component(FormItem.name, FormItem)
 
 Vue.config.productionTip = false
 

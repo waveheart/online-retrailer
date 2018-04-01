@@ -1,7 +1,7 @@
 <!-- 产品详情，规格与包装，评论页面 -->
 
 <template>
-  <div class="place_order_comtainer">
+  <div class="place_order_comtainer_wrapper">
     <div class="product">
       <div class="product_imgs">
         <div class="bg_img">
@@ -35,37 +35,44 @@
             <span class="parameter_title">选择颜色</span><span class="color"></span>
           </div>
           <div class="product_num">
-            <span class="parameter_title">数量</span><div></div>
+            <span class="parameter_title">数量</span>
+            <InputNum></InputNum>
           </div>
         </div>
         <span class="buy_button">立即购买</span>
         <ul class="product_guarantee">
-          <li class="guarantee_item"><i class="iconfont"></i>官方正品</li>
-          <li class="guarantee_item"><i class="iconfont"></i>3个月质保</li>
-          <li class="guarantee_item"><i class="iconfont"></i>7天无理由退货</li>
+          <li class="guarantee_item"><i class="iconfont icon-cc-question-square"></i>官方正品</li>
+          <li class="guarantee_item"><i class="iconfont icon-cc-question-square"></i>3个月质保</li>
+          <li class="guarantee_item"><i class="iconfont icon-cc-question-square"></i>7天无理由退货</li>
         </ul>
       </div>
     </div>
-    <div class="product_detail_tab"></div>
-    <div class="routers">
-      <router-view></router-view>
+    <div>
+      <ProductDetailTab></ProductDetailTab>
     </div>
   </div>
 </template>
 
 <script>
+import ProductDetailTab from '../place_order/product_detail_tab/product_detail_tab.vue'
+import InputNum from './input_num/input_num.vue'
+
 export default {
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
+  },
+  components: {
+    ProductDetailTab,
+    InputNum
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped="" type="text/css">
-.place_order_comtainer
+.place_order_comtainer_wrapper
   width: 980px;
   margin: 0 auto;
   .product
@@ -142,6 +149,9 @@ export default {
         .product_num
           height: 40px;
           margin-bottom: 0;
+          .parameter_title
+            display: inline-block;
+            margin-right: 54px;
       .buy_button
         width: 232px;
         height: 60px;
@@ -158,4 +168,7 @@ export default {
         align-items: center;
         .guarantee_item
           margin-right: 30px;
+          .iconfont
+            display: inline-block;
+            margin-right: 7px;
 </style>
